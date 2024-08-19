@@ -73,3 +73,4 @@ activePkmnHp.innerHTML = `
 
 module.exports = pikachu;
 module.exports = ponyta;
+// export {pikachu, ponyta};

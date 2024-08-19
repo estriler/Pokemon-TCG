@@ -1,8 +1,8 @@
 // fetch("https://github.com/PokemonTCG/pokemon-tcg-data/blob/master/cards/en/base1.json").then(function(response) {
 //     console.log(response);
 // });
-const pikachu = require("./card-list.js");
-const ponyta = require("./card-list.js");
+const {pikachu, ponyta} = require("./card-list.js");
+// import { pikachu, ponyta } from "./card-list";
 
 function coinFlip(){
     let result = Math.floor(Math.random()*2)
@@ -29,3 +29,5 @@ function attack(move){
 module.exports = coinFlip;
 module.exports = ifHeadsSelfDmg;
 module.exports = attack;
+
+// export {coinFlip, ifHeadsSelfDmg, attack};
