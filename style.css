@@ -1,0 +1,22 @@
+.displayedCard {
+    width: 200px;
+}
+
+.enemyCard {
+    width: 200px;
+}
+
+.cardOutline {
+    border: 10px;
+    width: 100px;
+    height: 140px;
+    outline-style: dashed;
+}
+
+.cardOutlineRow {
+    width: 900px;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+}

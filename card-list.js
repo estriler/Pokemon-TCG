@@ -50,8 +50,12 @@ let smashKick = new Move(["colorless", "colorless"], "Smash Kick", 20);
 let flameTail = new Move(["fire", "fire"], "Flame Tail", 30);
 let ponyta = new PokemonCard("pokemon", "Ponyta", "basic", 40, "fire", [smashKick, flameTail], "water", "none", 1, "/images/ponyta.jpg");
 
+let enemyCard = document.getElementById("enemyCard");
+enemyCard.innerHTML = `
+    <img src="${pikachu.image}" class="enemyCard"></img>
+`;
+
 let displayedCard = document.getElementById("displayedCard");
 displayedCard.innerHTML = `
-    <h2>${ponyta.name}</h2>
-    <img src="${ponyta.image}"</img>
+    <img src="${ponyta.image}" class="displayedCard"></img>
 `;
