@@ -17,3 +17,6 @@ function ifHeadsSelfDmg(dmg){
         selfHarm = dmg;
     }
 }
+
+module.exports = coinFlip;
+module.exports = ifHeadsSelfDmg;

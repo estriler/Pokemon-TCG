@@ -18,6 +18,7 @@
     position: absolute;
     top: 19%;
     left: 43%;
+    
 }
 
 .cardOutline {
@@ -66,7 +67,14 @@
 .attackButton {
     position: relative;
     left: -1.5%;
-    top: 7%
+    top: 2%
+}
+
+.hp {
+    position: relative;
+    left: 6%;
+    bottom: 50%;
+    z-index: 2;
 }
 
 @media (max-height: 890px) {

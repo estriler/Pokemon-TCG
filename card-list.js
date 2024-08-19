@@ -55,7 +55,17 @@ enemyCard.innerHTML = `
     <img src="${pikachu.image}" class="enemyCard"></img>
 `;
 
+let enemyHp = document.getElementById("enemyHp");
+enemyHp.innerHTML = `
+    Hp: ${pikachu.hp}
+`;
+
 let displayedCard = document.getElementById("displayedCard");
 displayedCard.innerHTML = `
     <img src="${ponyta.image}" class="displayedCard"></img>
+`;
+
+let activePkmnHp = document.getElementById("activePkmnHp");
+activePkmnHp.innerHTML = `
+    Hp: ${ponyta.hp}
 `;
