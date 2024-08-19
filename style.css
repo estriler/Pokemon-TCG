@@ -1,9 +1,21 @@
+.battleBoard {
+    text-align: center;
+    background-color: lightyellow;
+    height: 890px;
+}
+
 .displayedCard {
     width: 200px;
+    position: absolute;
+    bottom: 160px;
+    left: 825px;
 }
 
 .enemyCard {
     width: 200px;
+    position: absolute;
+    bottom: 450px;
+    left: 825px;
 }
 
 .cardOutline {
@@ -11,6 +23,7 @@
     width: 100px;
     height: 140px;
     outline-style: dashed;
+    color: darkgray;
 }
 
 .cardOutlineRow {
@@ -19,4 +32,31 @@
     grid-template-columns: auto auto auto auto auto;
     grid-gap: 10px;
     padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    /* position: absolute; */
+}
+
+.cardOutlinePrizesEnemy {
+    width: 300px;
+    height: 400px;
+    background-color: aqua;
+    position: relative;
+    bottom: 150px;
+    left: 1400px;
+}
+
+.cardOutlinePrizesMine {
+    width: 300px;
+    height: 400px;
+    background-color: teal;
+    position: relative;
+    bottom: 75px;
+    left: 150px;
+}
+
+.myBenchOutline {
+    position: absolute;
+    left: 500px;
+    bottom: 0px;
 }
