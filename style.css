@@ -63,6 +63,12 @@
     bottom: 0px;
 }
 
+.attackButton {
+    position: relative;
+    left: -1.5%;
+    top: 7%
+}
+
 @media (max-height: 890px) {
     .battleBoard {
         width: 100%;
