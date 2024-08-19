@@ -5,17 +5,19 @@
 }
 
 .displayedCard {
-    width: 200px;
+    /* height: 11vmax; */
+    width: 11vw;
+    /* width: 11vmax; */
     position: absolute;
-    bottom: 160px;
-    left: 825px;
+    bottom: 18%;
+    left: 43%;
 }
 
 .enemyCard {
-    width: 200px;
+    width: 11vw;
     position: absolute;
-    bottom: 450px;
-    left: 825px;
+    top: 19%;
+    left: 43%;
 }
 
 .cardOutline {
@@ -43,7 +45,7 @@
     background-color: aqua;
     position: relative;
     bottom: 150px;
-    left: 1400px;
+    left: 75%;
 }
 
 .cardOutlinePrizesMine {
@@ -52,11 +54,20 @@
     background-color: teal;
     position: relative;
     bottom: 75px;
-    left: 150px;
+    left: 5%;
 }
 
 .myBenchOutline {
     position: absolute;
     left: 500px;
     bottom: 0px;
+}
+
+@media (max-height: 890px) {
+    .battleBoard {
+        width: 100%;
+    }
+    .displayedCard {
+        width: 100%;
+    }
 }
