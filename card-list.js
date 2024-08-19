@@ -40,6 +40,7 @@ class Move {
     }
 }
 
+//Card List
 //58_102
 let gnaw = new Move (["colorless"], "Gnaw", 10);
 let thunderJolt = new Move (["lightning", "colorless"], "Thunder Jolt", 30, ifHeadsSelfDmg(10));
@@ -69,3 +70,6 @@ let activePkmnHp = document.getElementById("activePkmnHp");
 activePkmnHp.innerHTML = `
     Hp: ${ponyta.hp}
 `;
+
+module.exports = pikachu;
+module.exports = ponyta;
