@@ -40,10 +40,15 @@ class Move {
     }
 }
 
+//58_102
+let gnaw = new Move (["colorless"], "Gnaw", 10);
+let thunderJolt = new Move (["lightning", "colorless"], "Thunder Jolt", 30, ifHeadsSelfDmg(10));
+let pikachu = new PokemonCard("pokemon", "Pikachu", "basic", 40, "electric", [gnaw, thunderJolt], "fighting", "none", 1, "/images/pikachu.jpg")
+
+//60_102
 let smashKick = new Move(["colorless", "colorless"], "Smash Kick", 20);
 let flameTail = new Move(["fire", "fire"], "Flame Tail", 30);
 let ponyta = new PokemonCard("pokemon", "Ponyta", "basic", 40, "fire", [smashKick, flameTail], "water", "none", 1, "/images/ponyta.jpg");
-
 
 let displayedCard = document.getElementById("displayedCard");
 displayedCard.innerHTML = `

@@ -10,3 +10,10 @@ function coinFlip(){
         return "heads"
     }
 }
+
+function ifHeadsSelfDmg(dmg){
+    let selfHarm = 0;
+    if(coinFlip === "tails"){
+        selfHarm = dmg;
+    }
+}
