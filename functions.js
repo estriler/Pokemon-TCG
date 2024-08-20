@@ -1,7 +1,7 @@
 // fetch("https://github.com/PokemonTCG/pokemon-tcg-data/blob/master/cards/en/base1.json").then(function(response) {
 //     console.log(response);
 // });
-const {pikachu, ponyta} = require("./card-list.js");
+// const {pikachu, ponyta} = require("./card-list.js");
 // import { pikachu, ponyta } from "./card-list";
 
 function coinFlip(){
@@ -18,16 +18,13 @@ function ifHeadsSelfDmg(dmg){
     if(coinFlip === "tails"){
         selfHarm = dmg;
     }
+    return selfHarm;
 }
 
-function attack(move){
-    let attackPower = ponyta.moves[move].damage;
-    console.log(`${ponyta.name} used ${ponyta.moves[move].name}!`)
-    return attackPower;
-}
 
-module.exports = coinFlip;
-module.exports = ifHeadsSelfDmg;
-module.exports = attack;
+
+// module.exports = coinFlip;
+// module.exports = ifHeadsSelfDmg;
+// module.exports = attack;
 
 // export {coinFlip, ifHeadsSelfDmg, attack};

@@ -56,10 +56,10 @@ enemyCard.innerHTML = `
     <img src="${pikachu.image}" class="enemyCard"></img>
 `;
 
-let enemyHp = document.getElementById("enemyHp");
-enemyHp.innerHTML = `
-    Hp: ${pikachu.hp}
-`;
+// let enemyHp = document.getElementById("enemyHp");
+// enemyHp.innerHTML = `
+//     Hp: ${pikachu.hp}
+// `;
 
 let displayedCard = document.getElementById("displayedCard");
 displayedCard.innerHTML = `
@@ -71,6 +71,38 @@ activePkmnHp.innerHTML = `
     Hp: ${ponyta.hp}
 `;
 
-module.exports = pikachu;
-module.exports = ponyta;
+
+
+window.addEventListener("load", function() {
+    let displayedEnemyHP = pikachu.hp;
+    let attack1 = ponyta.moves[0];
+    let knockedOut = false;
+
+    function attack(){
+        // let move = ponyta.moves[0];
+        let attackPower = attack1.damage;
+        console.log(`${ponyta.name} used ${attack1.moveName}! It had an attack power of ${attackPower}!`);
+        displayedEnemyHP = displayedEnemyHP - attackPower;
+        console.log(`${pikachu.name}'s Hp went down from ${pikachu.hp} to now ${displayedEnemyHP}`);
+        if(displayedEnemyHP === 0){
+            console.log(`${pikachu.name} is knocked out!!!`);
+            knockedOut = true;
+        }
+        pikachu.hp = pikachu.hp - attackPower;
+        return displayedEnemyHP;
+    }
+    // while(!knockedOut){
+        let enemyHp = document.getElementById("enemyHp");
+        enemyHp.innerHTML = `
+        Hp: ${displayedEnemyHP}
+    `;
+    // }
+    
+    let attackButton = document.getElementById("attackButton");
+    attackButton.addEventListener("click", attack);
+});
+
+
+// module.exports = pikachu;
+// module.exports = ponyta;
 // export {pikachu, ponyta};
