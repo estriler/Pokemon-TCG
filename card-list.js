@@ -78,6 +78,11 @@ window.addEventListener("load", function() {
     let attack1 = ponyta.moves[0];
     let knockedOut = false;
 
+    let enemyHp = document.getElementById("enemyHp");
+        enemyHp.innerHTML = `
+            Hp: ${displayedEnemyHP}
+        `;
+
     function attack(){
         // let move = ponyta.moves[0];
         let attackPower = attack1.damage;
@@ -87,15 +92,18 @@ window.addEventListener("load", function() {
         if(displayedEnemyHP === 0){
             console.log(`${pikachu.name} is knocked out!!!`);
             knockedOut = true;
+            enemyCard.innerHTML = `
+                <h2 class="enemyCard">KO!</h2>
+            `;
         }
-        pikachu.hp = pikachu.hp - attackPower;
+        // pikachu.hp = pikachu.hp - attackPower;
+        enemyHp.innerHTML = `
+            Hp: ${displayedEnemyHP}
+        `;
         return displayedEnemyHP;
     }
     // while(!knockedOut){
-        let enemyHp = document.getElementById("enemyHp");
-        enemyHp.innerHTML = `
-        Hp: ${displayedEnemyHP}
-    `;
+        
     // }
     
     let attackButton = document.getElementById("attackButton");
