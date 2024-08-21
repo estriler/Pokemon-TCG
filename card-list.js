@@ -61,6 +61,7 @@ enemyCard.innerHTML = `
 //     Hp: ${pikachu.hp}
 // `;
 
+//Displays active card ie Ponyta
 let displayedCard = document.getElementById("displayedCard");
 displayedCard.innerHTML = `
     <img src="${ponyta.image}" class="displayedCard"></img>
@@ -71,12 +72,22 @@ activePkmnHp.innerHTML = `
     Hp: ${ponyta.hp}
 `;
 
+let opponentActivePokemon = [pikachu];
+let myActivePokemon = [ponyta];
+
+let opponentDiscardPileArr = [];
+let myDiscardPileArr = [];
+
+let opponentPrizeCardsArr = [];
+let myPrizeCardsArr = [];
+
 
 
 window.addEventListener("load", function() {
     let displayedEnemyHP = pikachu.hp;
     let attack1 = ponyta.moves[0];
     let knockedOut = false;
+    console.log(opponentDiscardPileArr);
 
     let enemyHp = document.getElementById("enemyHp");
         enemyHp.innerHTML = `
@@ -94,6 +105,11 @@ window.addEventListener("load", function() {
             knockedOut = true;
             enemyCard.innerHTML = `
                 <h2 class="enemyCard">KO!</h2>
+            `;
+            opponentDiscardPileArr.push(opponentActivePokemon.pop());
+            let opponentDiscardPileClass = document.getElementById("opponentDiscardPileClass");
+            opponentDiscardPileClass.innerHTML = `
+                <img src="/images/cardBack.png" class="opponentDiscardPileClass"></img>
             `;
         }
         // pikachu.hp = pikachu.hp - attackPower;

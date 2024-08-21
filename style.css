@@ -11,6 +11,7 @@
     position: absolute;
     bottom: 18%;
     left: 43%;
+    max-width: 12%;
 }
 
 .enemyCard {
@@ -18,7 +19,12 @@
     position: absolute;
     top: 19%;
     left: 43%;
-    
+}
+
+.opponentDiscardPileClass {
+    width: 11vw;
+    position: absolute;
+    left: 7%;
 }
 
 .cardOutline {
