@@ -97,8 +97,12 @@ window.addEventListener("load", function() {
             ${displayedEnemyHP} HP
         `;
 
+        //TO-DO Fix this plz
     function attachEnergyCard(){
-        attachedEnergy.push(myHand.indexOf("fireEnergy").pop());
+        let index = myHand.indexOf(EnergyCard.type="Fire");
+        console.log(myHand)
+        console.log(index);
+        // attachedEnergy.push(myHand[index].pop());
     }
 
     function attack(){
@@ -134,10 +138,11 @@ window.addEventListener("load", function() {
         opponentDiscardPile.innerHTML = `
             <img src="/images/cardBack.png" class="opponentDiscardPileClass"></img>
         `;
+        takePrizeCard();
     }
 
     function takePrizeCard(){
-
+        myHand.push(myPrizeCardsArr.pop());
     }
     // while(!knockedOut){
         
@@ -145,6 +150,9 @@ window.addEventListener("load", function() {
     
     let attackButton = document.getElementById("attackButton");
     attackButton.addEventListener("click", attack);
+
+    let attachEnergyButton = document.getElementById("attachEnergyButton");
+    attachEnergyButton.addEventListener("click", attachEnergyCard)
 });
 
 
