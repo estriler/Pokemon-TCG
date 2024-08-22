@@ -5,20 +5,13 @@
 }
 
 .displayedCard {
-    /* height: 11vmax; */
-    width: 11vw;
-    /* width: 11vmax; */
-    position: absolute;
-    bottom: 18%;
-    left: 43%;
-    max-width: 12%;
+    position: relative;
+    max-width: 100%;
 }
 
 .enemyCard {
-    width: 11vw;
-    position: absolute;
-    top: 19%;
-    left: 43%;
+    position: relative;
+    max-width: 100%;
 }
 
 .opponentDiscardPileClass {
@@ -73,7 +66,15 @@
 .attackButton {
     position: relative;
     left: -1.5%;
-    top: 2%
+    bottom: 45%;
+    /* bottom: 5
+    0%; */
+}
+
+.attachEnergyButton {
+    position: absolute;
+    left: 30px;
+    top: 5%;
 }
 
 .hp {
@@ -81,6 +82,32 @@
     left: 6%;
     bottom: 50%;
     z-index: 2;
+}
+
+#hand {
+    position: absolute;
+    background-color: pink;
+    width: 300px;
+    height: 200px;
+    right: 5%;
+}
+
+#activePkmnHp {
+    position: relative;
+    background-color: orange;
+    color: red;
+    width: 50px;
+    left: 61%;
+    bottom: 111%;
+}
+
+#enemyHp {
+    position: relative;
+    background-color: yellow;
+    color: red;
+    width: 50px;
+    left: 61%;
+    bottom: 106%;
 }
 
 @media (max-height: 890px) {

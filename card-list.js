@@ -51,6 +51,9 @@ let smashKick = new Move(["colorless", "colorless"], "Smash Kick", 20);
 let flameTail = new Move(["fire", "fire"], "Flame Tail", 30);
 let ponyta = new PokemonCard("pokemon", "Ponyta", "basic", 40, "fire", [smashKick, flameTail], "water", "none", 1, "/images/ponyta.jpg");
 
+//98_102
+let fireEnergy = new EnergyCard("energy", "Fire", 1, "/images/fireEnergy.png");
+
 let enemyCard = document.getElementById("enemyCard");
 enemyCard.innerHTML = `
     <img src="${pikachu.image}" class="enemyCard"></img>
@@ -69,7 +72,7 @@ displayedCard.innerHTML = `
 
 let activePkmnHp = document.getElementById("activePkmnHp");
 activePkmnHp.innerHTML = `
-    Hp: ${ponyta.hp}
+    ${ponyta.hp} HP
 `;
 
 let opponentActivePokemon = [pikachu];
@@ -86,29 +89,37 @@ let myPrizeCardsArr = [];
 window.addEventListener("load", function() {
     let displayedEnemyHP = pikachu.hp;
     let attack1 = ponyta.moves[0];
-    let knockedOut = false;
-    console.log(opponentDiscardPileArr);
+    let myHand = [pikachu, fireEnergy, fireEnergy];
+    let attachedEnergy = [fireEnergy, fireEnergy];
 
     let enemyHp = document.getElementById("enemyHp");
         enemyHp.innerHTML = `
-            Hp: ${displayedEnemyHP}
+            ${displayedEnemyHP} HP
         `;
+
+    function attachEnergyCard(){
+        attachedEnergy.push(myHand.indexOf("fireEnergy").pop());
+    }
 
     function attack(){
         // let move = ponyta.moves[0];
         let attackPower = attack1.damage;
-        console.log(`${ponyta.name} used ${attack1.moveName}! It had an attack power of ${attackPower}!`);
-        let previousHP = displayedEnemyHP;
-        displayedEnemyHP = displayedEnemyHP - attackPower;
-        console.log(`${pikachu.name}'s Hp went down from ${previousHP} to now ${displayedEnemyHP}`);
-        previousHP = displayedEnemyHP;
+        if(attachedEnergy.length >= attack1.energyCost.length){
+            console.log(`${ponyta.name} used ${attack1.moveName}! It had an attack power of ${attackPower}!`);
+            let previousHP = displayedEnemyHP;
+            displayedEnemyHP = displayedEnemyHP - attackPower;
+            console.log(`${pikachu.name}'s Hp went down from ${previousHP} to now ${displayedEnemyHP}`);
+            previousHP = displayedEnemyHP;
+        }else{
+            console.log(`${ponyta.name} doesn't have enough energy to use ${attack1.moveName}!`);
+        }
+        
         if(displayedEnemyHP <= 0){
             knockedOutFunction(opponentActivePokemon[0]);
         }
         enemyHp.innerHTML = `
-            Hp: ${displayedEnemyHP}
+            ${displayedEnemyHP} HP
         `;
-        return displayedEnemyHP;
     }
 
     function knockedOutFunction(pkmn){
