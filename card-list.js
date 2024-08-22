@@ -98,25 +98,35 @@ window.addEventListener("load", function() {
         // let move = ponyta.moves[0];
         let attackPower = attack1.damage;
         console.log(`${ponyta.name} used ${attack1.moveName}! It had an attack power of ${attackPower}!`);
+        let previousHP = displayedEnemyHP;
         displayedEnemyHP = displayedEnemyHP - attackPower;
-        console.log(`${pikachu.name}'s Hp went down from ${pikachu.hp} to now ${displayedEnemyHP}`);
-        if(displayedEnemyHP === 0){
-            console.log(`${pikachu.name} is knocked out!!!`);
-            knockedOut = true;
-            enemyCard.innerHTML = `
-                <h2 class="enemyCard">KO!</h2>
-            `;
-            opponentDiscardPileArr.push(opponentActivePokemon.pop());
-            let opponentDiscardPileClass = document.getElementById("opponentDiscardPileClass");
-            opponentDiscardPileClass.innerHTML = `
-                <img src="/images/cardBack.png" class="opponentDiscardPileClass"></img>
-            `;
+        console.log(`${pikachu.name}'s Hp went down from ${previousHP} to now ${displayedEnemyHP}`);
+        previousHP = displayedEnemyHP;
+        if(displayedEnemyHP <= 0){
+            knockedOutFunction(opponentActivePokemon[0]);
         }
-        // pikachu.hp = pikachu.hp - attackPower;
         enemyHp.innerHTML = `
             Hp: ${displayedEnemyHP}
         `;
         return displayedEnemyHP;
+    }
+
+    function knockedOutFunction(pkmn){
+        console.log(`${pkmn} is knocked out!!!`);
+        knockedOut = true;
+        enemyCard.innerHTML = `
+            <h2 class="enemyCard" style="background-color:red">KO!</h2>
+        `;
+        opponentDiscardPileArr.push(opponentActivePokemon.pop());
+        console.log("Opponent's discard pile is now " + opponentDiscardPileArr.length);
+        let opponentDiscardPile = document.getElementById("opponentDiscardPileClass");
+        opponentDiscardPile.innerHTML = `
+            <img src="/images/cardBack.png" class="opponentDiscardPileClass"></img>
+        `;
+    }
+
+    function takePrizeCard(){
+
     }
     // while(!knockedOut){
         
